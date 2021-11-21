@@ -38,8 +38,7 @@ void* producer(void *param)
 
 		// critical section ...
 		if (insert_item(item) == 0) {
-			std::cout << "Item "<< item << " inserted by a producer. The current content of the buffer is " << item << ". \t";
-      
+			std::cout << "Item "<< item << " inserted by a producer. The current content of the buffer is ";
 			display();
 		}
 		else {
@@ -65,7 +64,7 @@ void *consumer(void *param)
 
 		// critical section ...
 		if (remove_item(&item) == 0) {
-			std::cout << "consumed " << item << ". \t";
+			std::cout << "Item "<< item << " removed by a consumer. The current content of the buffer is "; 
 			display();
 		}
 		else {

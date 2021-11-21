@@ -33,7 +33,7 @@ void display()
 		std::cout << "empty ";
 	}
 
-	std::cout << "] \n";
+	std::cout << "].\n";
 }
 
 // PURPOSE: checks if the buffer is full.
