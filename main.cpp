@@ -38,7 +38,8 @@ void* producer(void *param)
 
 		// critical section ...
 		if (insert_item(item) == 0) {
-			std::cout << "produced " << item << ". \t";
+			std::cout << "Item "<< item << " inserted by a producer. The current content of the buffer is " << item << ". \t";
+      
 			display();
 		}
 		else {

@@ -58,7 +58,6 @@ int insert_item(buffer_item item) {
 		buffer[back] = item;
 		back = (back + 1) % BUFFER_SIZE;  // modulus used to wrap around.
 		count++;
-    display();//In order to study the behavoirs keep track and print out the content of the shared buffer during the execution of the threads when an item is added or consumed.
 		return 0;
 	}
 
@@ -75,7 +74,6 @@ int remove_item(buffer_item *item) {
 		*item = buffer[front];
 		front = (front + 1) % BUFFER_SIZE;	// modulus used to wrap around.
 		count--;
-    display();//In order to study the behavoirs keep track and print out the content of the shared buffer during the execution of the threads when an item is added or consumed.
 		return 0;
 	}
 
