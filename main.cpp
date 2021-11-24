@@ -2,7 +2,8 @@
 //CS 433 Assignment 4
 //Your names: Jasmine Meyer & Birhane Diarra
 //File type: main.cpp
-//Purpose: Main driver to simulate the 
+//Purpose: Main driver to simulate the program. 
+//Program that solves 'The Producer-Consumer Problem using the Pthreads API.
 //===========================================================
 #include <iostream>
 #include <pthread.h>
@@ -31,14 +32,14 @@ void* producer(void *param)
 
 	while (true) {
 		sleep(rand() % 3);					// alternates between sleeping and producing
-		item = rand() % RAND_MAX;			// generate random number for item
+		item = rand() % 100;			// generate random number for item
 
 		sem_wait(&empty);					// acquire the semaphore, wait till not full
 		pthread_mutex_lock(&mutex);			// enforce the mutex to access critical section
 
 		// critical section ...
 		if (insert_item(item) == 0) {
-			std::cout << "Item "<< item << " inserted by a producer. The current content of the buffer is ";
+			std::cout << "Item "<< item << " inserted by a producer.\n The current content of the buffer is ";
 			display();
 		}
 		else {
@@ -64,7 +65,7 @@ void *consumer(void *param)
 
 		// critical section ...
 		if (remove_item(&item) == 0) {
-			std::cout << "Item "<< item << " removed by a consumer. The current content of the buffer is "; 
+			std::cout << "Item "<< item << " removed by a consumer.\n The current content of the buffer is "; 
 			display();
 		}
 		else {
@@ -82,9 +83,9 @@ int main(int argc, char *argv[])
 {
   std::cout << "CS 433 Programming assignment 4\n"
 	"Author: Birhane Diarra and Jasmine Meyer\n"
-	"Date: 11/13/2021\n"
+	"Date: 11/23/2021\n"
 	"Course: CS433 (Operating Systems)\n"
-	"Description:Program that solves 'The Producer-Consumer Problem', using the Pthreads API\n"
+	"Description: Program that solves 'The Producer-Consumer Problem', using the Pthreads API\n"
 	"=================================" << std::endl;
 
 	if (argc < 4 || argc > 4) {

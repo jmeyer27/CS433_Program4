@@ -1,8 +1,8 @@
 //=========================================================
 //CS 433 Assignment 4
 //Your names: Jasmine Meyer & Birhane Diarra
-//File type: main.cpp
-//Purpose: Main driver to simulate the 
+//File type: buffer.cpp
+//Purpose: Buffer is a class that keeps track of the buffer between the producers and the consumers.
 //===========================================================
 #include "buffer.h"
 // buffer variables
